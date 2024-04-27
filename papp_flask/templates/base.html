@@ -51,6 +51,21 @@
     </div>
 
     <div class="navbar-end">
+    <!-- search by tokenId -->
+      <div class="navbar-item">
+        <form action="{{ url_for('home.index') }}" method="post">
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" name="tokenid" placeholder="Enter Token Number">
+            </div>
+            <div class="control">
+              <button class="button is-link" type="submit">Get One PAPP!</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- search by Ethereum Address -->
       <div class="navbar-item">
         <form action="{{ url_for('home.index') }}" method="post">
           <div class="field has-addons">
@@ -58,7 +73,7 @@
               <input class="input" type="text" name="ethereum_address" placeholder="Enter Ethereum Address">
             </div>
             <div class="control">
-              <button class="button is-success" type="submit">GO!</button>
+              <button class="button is-success" type="submit">Get PAPPs!</button>
             </div>
           </div>
         </form>
@@ -69,7 +84,18 @@
 
 <!-- Content -->
 <section class="section">
+ <!-- messages from FLask -->
+  {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div class="notification is-link is-light">
+      <button class="delete"></button>
+        {{ messages[0] }}
+      </div>
+      {% endif %}
+  {% endwith %}
+
   <div class="container">
+    <!-- content block -->
     {% block content %}{% endblock %}
   </div>
 </section>

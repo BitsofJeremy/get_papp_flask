@@ -5,7 +5,7 @@ https://papp.funinternetthings.com/
 Features
 - Simple Flask website to get NFTs from the Base Blockchain for a user's wallet address 
 - Export from SVG to 1024x1024 PNG file 
-
+- Search for one token ID to view and export
 
 
 # Install
@@ -30,8 +30,6 @@ Open `http://127.0.0.1:5000/` in browser of choice.
 ### Screenshots
 
 ![Screenshot1](screenshot_01.png)
-
-![Screenshot2](screenshot_02.png)
 
 #### Example .env file
 
