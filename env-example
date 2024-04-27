@@ -1,0 +1,7 @@
+export FLASK_APP=app.py
+export FLASK_ENV=development
+export FLASK_DEBUG=True
+export CSRF_SESSION_KEY=super_secret_password
+export SECRET_KEY=super_secret_password
+export SALTY_SECRET=super_secret_password
+export ALCHEMY_API_KEY=super_secret_password

@@ -1,0 +1,120 @@
+<!-- templates/base.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PAPP as PNG</title>
+
+    <!-- Bulma Import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- Bulma Social Sharing Import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@2/css/all.min.css" />
+
+    <!--Font Awesome-->
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+            integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+            crossorigin="anonymous"
+    >
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+  <img src="{{ url_for('static', filename='444_32x32.gif') }}" alt="32x32 GIF" width="32" height="32" class="mr-2">
+  <strong>PAPP as PNG</strong>
+</a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <!-- Add other navbar items here -->
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <form action="{{ url_for('home.index') }}" method="post">
+          <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" name="ethereum_address" placeholder="Enter Ethereum Address">
+            </div>
+            <div class="control">
+              <button class="button is-success" type="submit">GO!</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Content -->
+<section class="section">
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>PAPP as PNG </strong>made by <a href="https://twitter.com/BitsofJeremy">BitsofJeremy</a>
+    </p>
+    <img src="{{ url_for('static', filename='444_32x32.gif') }}" alt="32x32 GIF" width="32" height="32">
+  </div>
+</footer>
+
+<!-- JavaScript to make burger menu work -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const $nbBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($nbBurgers.length < 1) {
+            return;
+        }
+        $nbBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+                const target = el.dataset.target;
+                const $target = document.getElementById(target);
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
+    });
+</script>
+
+<!--    JavaScript to delete notifications. -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+    const $notification = $delete.parentNode;
+
+    $delete.addEventListener('click', () => {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
+</script>
+
+</body>
+
+</html>
