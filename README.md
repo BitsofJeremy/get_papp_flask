@@ -2,7 +2,7 @@
 
 Features
 - Simple Flask website to get NFTs from the Base Blockchain for a user's wallet address 
- -Export from SVG to 1024x1024 PNG file 
+- Export from SVG to 1024x1024 PNG file 
 
 
 
