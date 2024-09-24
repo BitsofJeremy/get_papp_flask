@@ -1,6 +1,6 @@
 # get_papp_flask
 
-https://papp.funinternetthings.com/
+***** ARCHIVED REPO *****
 
 Features
 - Simple Flask website to get NFTs from the Base Blockchain for a user's wallet address 
